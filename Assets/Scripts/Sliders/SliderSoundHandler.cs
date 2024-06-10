@@ -6,41 +6,27 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class SliderSoundHandler : MonoBehaviour
 {
-    private const string _masterVolumeParameter = "MasterVolume";
-    private const string _musicVolumeParameter = "MusicVolume";
-    private const string _uiVolumeParameter = "UIVolume";
+    private const float _dBModifyer = 20f;
 
-    [SerializeField] private AudioMixerGroup _mixer;
+    [SerializeField] private AudioMixer _mixer;
+    [SerializeField] private string _volumeParameterName;
 
     private Slider _slider;
-
     private float _value;
+    private float _minValueSlider = 0.0001f;
 
     private void Awake()
     {
         _slider = GetComponent<Slider>();
-        _slider.minValue = 0.0001f;
+        _slider.minValue = _minValueSlider;
         _value = _slider.value;
     }
 
-    public void SetMasterVolume()
+    public void SetVolume()
     {
         _value = _slider.value;
-        _mixer.audioMixer.SetFloat(_masterVolumeParameter, Mathf.Log10(_value) * 20);
-    }    
-
-    public void SetMusicVolume()
-    {
-        _value = _slider.value;
-        _mixer.audioMixer.SetFloat(_musicVolumeParameter, Mathf.Log10(_value) * 20);
-    }  
-    
-    public void SetUIVolume()
-    {
-        _value = _slider.value;
-        _mixer.audioMixer.SetFloat(_uiVolumeParameter, Mathf.Log10(_value) * 20);
+        _mixer.SetFloat(_volumeParameterName, Mathf.Log10(_value) * _dBModifyer);
     }
-
 }
 
 

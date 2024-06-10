@@ -832,7 +832,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204d8beb7dc06a64f8953d7930f424e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: 24300002, guid: 068ec1bf2a08014408192431feeae59f, type: 2}
+  _mixer: {fileID: 24100000, guid: 068ec1bf2a08014408192431feeae59f, type: 2}
+  _volumeParameterName: MasterVolume
 --- !u!114 &517952654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,13 +881,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.504
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 517952653}
         m_TargetAssemblyTypeName: SliderSoundHandler, Assembly-CSharp
-        m_MethodName: SetMasterVolume
+        m_MethodName: SetVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1547,7 +1548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204d8beb7dc06a64f8953d7930f424e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: -1965291355878658012, guid: 068ec1bf2a08014408192431feeae59f, type: 2}
+  _mixer: {fileID: 24100000, guid: 068ec1bf2a08014408192431feeae59f, type: 2}
+  _volumeParameterName: MusicVolume
 --- !u!114 &876925725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,13 +1597,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.262
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 876925724}
         m_TargetAssemblyTypeName: SliderSoundHandler, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+        m_MethodName: SetVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2141,7 +2143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204d8beb7dc06a64f8953d7930f424e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: 7090721210890729461, guid: 068ec1bf2a08014408192431feeae59f, type: 2}
+  _mixer: {fileID: 24100000, guid: 068ec1bf2a08014408192431feeae59f, type: 2}
+  _volumeParameterName: UIVolume
 --- !u!114 &1391886373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2195,7 +2198,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1391886372}
         m_TargetAssemblyTypeName: SliderSoundHandler, Assembly-CSharp
-        m_MethodName: SetUIVolume
+        m_MethodName: SetVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
